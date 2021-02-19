@@ -97,6 +97,7 @@ class LossyUDP(socket):
         while not self.stopped:
             try:
                 # wait for a packet, but timeout after one second
+
                 data, addr = super().recvfrom(bufsize)
                 with stats.lock:
                     stats.packets_recv += 1
